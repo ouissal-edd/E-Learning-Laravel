@@ -8,6 +8,9 @@ use App\Http\Controllers\Front\MessageController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\CatController;
+use App\Http\Controllers\Admin\TrainerController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -63,6 +66,22 @@ Route::get('/admin/cat/edit/{id}',[CatController::class, 'edit'])->name('admin.c
 Route::post('/admin/cat/update/{id}',[CatController::class, 'update'])->name('admin.cat.update');
 
 Route::get('/admin/cat/delete/{id}',[CatController::class, 'delete'])->name('admin.cat.delete');
+
+// trainer
+Route::get('/admin/trainer',[TrainerController::class, 'index'])->name('admin.trainer');
+
+Route::get('/admin/trainer/create',[TrainerController::class, 'create'])->name('admin.trainer.create');
+
+Route::post('/admin/trainer/store',[TrainerController::class, 'store'])->name('admin.trainer.store');
+
+Route::get('/admin/trainer/edit/{id}',[TrainerController::class, 'edit'])->name('admin.trainer.edit');
+
+Route::post('/admin/trainer/update/{id}',[TrainerController::class, 'update'])->name('admin.trainer.update');
+
+Route::get('/admin/trainer/delete/{id}',[TrainerController::class, 'delete'])->name('admin.trainer.delete');
+
+
+
 
 
 
