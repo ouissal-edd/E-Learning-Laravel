@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\CatController;
 use App\Http\Controllers\Admin\TrainerController;
+use App\Http\Controllers\Admin\CourseController as AdminCourseController;
 
 
 /*
@@ -79,6 +80,19 @@ Route::get('/admin/trainer/edit/{id}',[TrainerController::class, 'edit'])->name(
 Route::post('/admin/trainer/update/{id}',[TrainerController::class, 'update'])->name('admin.trainer.update');
 
 Route::get('/admin/trainer/delete/{id}',[TrainerController::class, 'delete'])->name('admin.trainer.delete');
+
+// course
+Route::get('/admin/course',[AdminCourseController::class, 'index'])->name('admin.course');
+
+Route::get('/admin/course/create',[AdminCourseController::class, 'create'])->name('admin.course.create');
+
+Route::post('/admin/course/store',[AdminCourseController::class, 'store'])->name('admin.course.store');
+
+Route::get('/admin/course/edit/{id}',[AdminCourseController::class, 'edit'])->name('admin.course.edit');
+
+Route::post('/admin/course/update/{id}',[AdminCourseController::class, 'update'])->name('admin.course.update');
+
+Route::get('/admin/course/delete/{id}',[AdminCourseController::class, 'delete'])->name('admin.course.delete');
 
 
 
