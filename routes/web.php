@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Front\HomeController;
+use App\Http\Controllers\Front\HomepageController;
 use App\Http\Controllers\Front\CourseController;
 use App\Http\Controllers\Front\ContactController;
 use App\Http\Controllers\Front\MessageController;
@@ -22,9 +22,9 @@ use App\Http\Controllers\Front\MessageController;
 
 
 
+// Front
 
-
-Route::get('/',[HomeController::class, 'index'])->name('front.homepage');
+Route::get('/',[HomepageController::class, 'index'])->name('front.homepage');
 
 Route::get('/cat/{id}',[CourseController::class, 'cat'])->name('front.courseCat');
 
@@ -32,4 +32,10 @@ Route::get('/course/{cId}',[CourseController::class, 'show'])->name('front.show'
 
 Route::get('/contact',[ContactController::class, 'index'])->name('front.contact');
 
-Route::post('/message/newsletter',[MessageController::class, 'newsletter'])->name('front.message.newsletter');
+Route::post('/newsletter',[MessageController::class, 'newsletter'])->name('front.newsletter');
+
+Route::post('/message',[MessageController::class, 'message'])->name('front.message');
+
+Route::post('/subscribe',[CourseController::class, 'subscribe'])->name('front.subscribe');
+
+// Admin

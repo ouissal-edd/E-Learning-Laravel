@@ -39,7 +39,7 @@
             <h4>Join Our Newsletter</h4>
             <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
             @include('front.inc.errors')
-            <form action="{{route('front.message.newsletter')}}" method="post">
+            <form action="{{route('front.newsletter')}}" method="post">
                 @csrf
               <input type="email" name="email"><input type="submit" value="Subscribe">
             </form>
