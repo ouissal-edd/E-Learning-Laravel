@@ -105,7 +105,7 @@ body {
     <form action="{{route('admin.auth.loginPost')}}" method="post">
         @csrf
 		<h2>Sign In</h2>
-		<p>Please fill in this form to create an account!</p>
+        <p class="hint-text">Sign in to your account</p>
 		<hr>
         <div class="form-group">
 			<div class="input-group">
@@ -138,10 +138,6 @@ body {
 			</div>
         </div>
 
-
-        <div class="form-group">
-			<label class="form-check-label"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
-		</div>
 		<div class="form-group">
             <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
         </div>

@@ -24,7 +24,15 @@ class AuthController extends Controller
         if (auth()->attempt(['email' => $request->email, 'password' => $request->password])) {
             return redirect()->route('admin.home');
         } else {
-            return redirect()->back()->with('error', 'Invalid email or password.');
+            $error='Invalid email or password';
+            return redirect()->back()->with('error');
         }
+    }
+
+    // logout
+    public function logout()
+    {
+        auth()->logout();
+        return redirect()->route('admin.auth.login');
     }
 }
