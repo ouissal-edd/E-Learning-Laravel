@@ -5,8 +5,8 @@ use App\Http\Controllers\Front\HomepageController;
 use App\Http\Controllers\Front\CourseController;
 use App\Http\Controllers\Front\ContactController;
 use App\Http\Controllers\Front\MessageController;
-
-
+use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\AuthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,3 +39,8 @@ Route::post('/message',[MessageController::class, 'message'])->name('front.messa
 Route::post('/subscribe',[CourseController::class, 'subscribe'])->name('front.subscribe');
 
 // Admin
+
+Route::get('/dashboard',[HomeController::class, 'index'])->name('admin.home');
+
+Route::get('/admin/login',[AuthController::class, 'login'])->name('admin.auth.login');
+Route::post('/admin/auth/login',[AuthController::class, 'loginPost'])->name('admin.auth.loginPost');
